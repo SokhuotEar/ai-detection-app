@@ -10,6 +10,7 @@ from nltk.util import ngrams
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import pickle
+import textstat
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -26,14 +27,17 @@ def read_files(directory):
                 texts.append(file.read())
     return texts
 
+# def calculate_readability_score(text):
+#     sentences = sent_tokenize(text)
+#     words = word_tokenize(text)
+#     if not sentences or not words:
+#         return 0
+#     avg_sentence_length = len(words) / len(sentences)
+#     avg_syllables_per_word = sum(count_syllables(word) for word in words) / len(words)
+#     return 206.835 - 1.015 * avg_sentence_length - 84.6 * avg_syllables_per_word
+
 def calculate_readability_score(text):
-    sentences = sent_tokenize(text)
-    words = word_tokenize(text)
-    if not sentences or not words:
-        return 0
-    avg_sentence_length = len(words) / len(sentences)
-    avg_syllables_per_word = sum(count_syllables(word) for word in words) / len(words)
-    return 206.835 - 1.015 * avg_sentence_length - 84.6 * avg_syllables_per_word
+    return textstat.flesch_reading_ease(text)
 
 def count_syllables(word):
     return max(1, len([vowel for vowel in word if vowel in 'aeiou']))
