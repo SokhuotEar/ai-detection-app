@@ -1,0 +1,35 @@
+Training AI
+
+    7 from Gemini (name: Gemini 1-7)
+    7 from Copilot (name: Copilot 1-7)
+    7 from ChatGPT (name: ChatGPT 1-7)
+        - write an academic writing about technology (500 words)
+        - write an acadamic paper about business (700 words)
+        - How to foster innovation?
+        - write a text regarding war
+        - write a casual text about education
+
+    7 from AI + AI paraphraser (name: AI-AIparaphraser 1-7)
+
+Training Human
+
+    txt 1- 15 (from snekith's folder from text 1-15 in the folder)
+    txt 16 - 20 (Sok's folder from txts 1-5 in the folder)
+    txt 21 - 25 (Academic writing pre 2018 abstract and intro/conclusions only)
+        - txt 21:
+        - txt 22: https://ieeexplore.ieee.org/document/7780460
+        - txt 23
+        - txt 24:
+        - txt 25: https://ieeexplore.ieee.org/document/7803544
+    5 Txts  (from patrick's folder from txts 1-5 in the folder)
+
+Test AI:
+    Dir: Prompts and reponse/AI Response,
+    and files from Text/prompt 1-6 (AI + AI paraphraser dir)
+
+Test Human:
+    Dir: Prompts and response/Human Response
+    and all of Tanzim's upload
+
+
+

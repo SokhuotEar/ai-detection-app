@@ -1,3 +1,9 @@
 /ai_detection_model.pkl
 /data
 /env
+/ensemble-learning/Ex-testing
+/ensemble-learning/test-ai
+/ensemble-learning/test-human
+/ensemble-learning/training-ai
+/ensemble-learning/training-human
+/ensemble-learning/.env

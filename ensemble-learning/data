@@ -1,0 +1,87 @@
+filename results expected
+copilot 3.txt	[0.20179611 0.79820389]	AI
+Gemini 4.txt	[0.13237354 0.86762646]	AI
+Gemini 5.txt	[0.06940554 0.93059446]	AI
+Copilot 5.txt	[7.00242245e-05 9.99929976e-01]	AI
+Copilot 4.txt	[0.23896388 0.76103612]	AI
+ai academic 7.txt	[0.06846751 0.93153249]	AI
+ai academic 6.txt	[0.07545795 0.92454205]	AI
+gpt5.txt	[9.95559154e-04 9.99004441e-01]	AI
+gpt4.txt	[0.07014621 0.92985379]	AI
+ai academic 8.txt	[0.06788412 0.93211588]	AI
+ai academic 9.txt	[8.50160293e-04 9.99149840e-01]	AI
+gpt3.txt	[0.01512273 0.98487727]	AI
+ai academic 10.txt	[0.00836877 0.99163123]	AI
+
+
+Human TC1.4.txt	[0.66664781 0.33335219]	HUMAN
+Human TC1.5.txt	[9.99999999e-01 1.05650800e-09]	HUMAN
+Human TC3.1.txt	[1.00000000e+00 1.20118074e-14]	HUMAN
+Human TC3.3.txt	[0.79999495 0.20000505]	HUMAN
+Human TC3.2.txt	[9.99916776e-01 8.32237411e-05]	HUMAN
+Human TC2.5.txt	[0.69695858 0.30304142]	HUMAN
+Human TC2.4.txt	[0.86663673 0.13336327]	HUMAN
+Human TC2.6.txt	[9.99999999e-01 1.34986790e-09]	HUMAN
+Human TC2.7.txt	[0.9109539 0.0890461]	HUMAN
+
+
+WITH COPYLEAKS
+ --- Overall Stats ---
+Accuracy: 1.00
+Precision: 1.00
+Recall: 1.00
+F1 Score: 1.00
+
+Mean Absolute Error (MAE): 0.09
+Mean Squared Error (MSE) : 0.02
+
+ --- Human-Only Stats ---
+Accuracy: 1.00
+Precision: 1.00
+Recall: 1.00
+F1 Score: 1.00
+
+Mean Absolute Error (MAE): 0.12
+Mean Squared Error (MSE) : 0.03
+
+ --- AI-Only Stats ---
+Accuracy: 1.00
+Precision: 1.00
+Recall: 1.00
+F1 Score: 1.00
+
+Mean Absolute Error (MAE): 0.07
+Mean Squared Error (MSE) : 0.01
+
+
+WITHOUT COPYLEAKS:
+
+ --- Overall Stats ---
+Accuracy: 0.95
+Precision: 1.00
+Recall: 0.92
+F1 Score: 0.96
+
+Mean Absolute Error (MAE): 0.11
+Mean Squared Error (MSE) : 0.04
+
+ --- Human-Only Stats ---
+Accuracy: 1.00
+Precision: 1.00
+Recall: 1.00
+F1 Score: 1.00
+
+Mean Absolute Error (MAE): 0.08
+Mean Squared Error (MSE) : 0.02
+
+ --- AI-Only Stats ---
+Accuracy: 0.92
+Precision: 1.00
+Recall: 0.92
+F1 Score: 0.96
+
+Mean Absolute Error (MAE): 0.13
+Mean Squared Error (MSE) : 0.05
+
+
+{'scanType': 'sandbox', 'modelVersion': 'v4', 'results': [{'classification': 2, 'probability': 0.9714061, 'matches': [{'text': {'chars': {'starts': [0], 'lengths': [1557]}, 'words': {'starts': [0], 'lengths': [271]}}}]}, {'classification': 1, 'probability': 0.006316364, 'matches': [{'text': {'chars': {'starts': [1557], 'lengths': [135]}, 'words': {'starts': [271], 'lengths': [27]}}}]}, {'classification': 2, 'probability': 0.32940686, 'matches': [{'text': {'chars': {'starts': [1692], 'lengths': [87]}, 'words': {'starts': [298], 'lengths': [17]}}}]}, {'classification': 1, 'probability': 0.9098962, 'matches': [{'text': {'chars': {'starts': [1779], 'lengths': [532]}, 'words': {'starts': [315], 'lengths': [85]}}}]}], 'summary': {'human': 0.28, 'ai': 0.72}, 'scannedDocument': {'scanId': 'example-id', 'totalWords': 400, 'totalExcluded': 0, 'actualCredits': 0, 'expectedCredits': 1, 'creationTime': '2023-03-08T11:40:03.0232297Z'}}
