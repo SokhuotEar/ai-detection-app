@@ -40,7 +40,12 @@ def generate_training_xy(dir_name: str, expected_value: int) -> tuple[list[list]
 
                 # Process the file contents
                 text_feature = aux_function.get_text_features(text)
+
+                # CHANGE copyleaks_scan_text(text, filename) to get_copyleaks_results(text, filename)
+                # to read from copyleaks_results.py file instead of calling the API
+                # or comment this line out if you don't want to use copyleaks results at all
                 text_feature.append(copyleaks_scan_text(text, filename))
+
 
                 x_results.append(text_feature)
                 y_results.append(expected_value)
@@ -73,7 +78,12 @@ def perform_testing(dir_name: str, model: VotingClassifier) -> list[int]:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
                 text = file.read()
                 text_feature = aux_function.get_text_features(text)
+
+                # CHANGE copyleaks_scan_text(text, filename) to get_copyleaks_results(text, filename)
+                # to read from copyleaks_results.py file instead of calling the API
+                # or comment this line out if you don't want to use copyleaks results at all
                 text_feature.append(copyleaks_scan_text(text, filename))
+
                 X_test.append(text_feature)
                 filenames.append(filename)
 
