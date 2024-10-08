@@ -79,18 +79,3 @@ def copyleaks_scan_text(text, filename):
     print(response.get("summary", {}).get("ai", 0) * 100)
     return response.get("summary", {}).get("ai", 0) * 100
 
-copyleaks_scan_text("""
-
-Neuroscience, the scientific study of the nervous system, has become a cornerstone in understanding complex human behaviors, brain functions, and various neurobiological disorders. The discipline integrates principles from biology, psychology, physics, and chemistry to explore the underlying mechanisms that drive cognition, perception, emotions, and behavior. Over the past few decades, advances in neuroscience have revolutionized medicine, education, and even artificial intelligence, demonstrating the profound implications of understanding the brain and nervous system.
-
-One of the key contributions of neuroscience lies in its role in diagnosing and treating neurological and psychiatric disorders. Through neuroimaging techniques such as functional magnetic resonance imaging (fMRI) and positron emission tomography (PET), researchers have been able to identify abnormalities in brain structures and activity associated with conditions like Alzheimer's disease, Parkinson's disease, schizophrenia, and depression. These advancements allow for early diagnosis and intervention, significantly improving patient outcomes. Additionally, neuroscientific research has paved the way for the development of targeted therapies, such as deep brain stimulation for Parkinson’s disease and transcranial magnetic stimulation for depression, offering relief to patients where traditional treatments have failed.
-
-In the realm of cognitive neuroscience, the study of how brain structures support mental functions has been particularly influential in education. Research on learning and memory has provided valuable insights into how the brain processes information, which in turn has informed the development of educational strategies. For example, findings on neuroplasticity— the brain's ability to reorganize itself by forming new neural connections—have led to teaching methods that encourage adaptive learning and cater to individual student needs. By understanding how the brain encodes, stores, and retrieves information, educators can create more effective learning environments and improve educational outcomes.
-
-Moreover, neuroscience is also playing a critical role in shaping the field of artificial intelligence (AI). Neuroscientific insights into how the brain processes and learns from vast amounts of sensory input have influenced the design of neural networks and deep learning models, which are foundational to AI systems. Concepts such as pattern recognition, parallel processing, and hierarchical information processing in the brain are directly mirrored in machine learning algorithms. By continuing to draw on neuroscience, AI technologies can become more sophisticated, enabling more accurate simulations of human cognition and decision-making.
-
-In conclusion, neuroscience has far-reaching implications that extend beyond its foundational understanding of the
-brain. Its applications in diagnosing and treating neurological disorders, enhancing education, and advancing AI are
-shaping various fields, making it an essential discipline for fostering innovation and improving human well-being. As
-research continues to evolve, neuroscience will likely remain at the forefront of many scientific breakthroughs,
-contributing to our understanding of both the human mind and the broader complexities of life.""", 'filename')

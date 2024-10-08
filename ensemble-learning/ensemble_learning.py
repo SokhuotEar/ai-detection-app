@@ -24,6 +24,7 @@ AI = 1
 
 
 def generate_training_xy(dir_name: str, expected_value: int) -> tuple[list[list], list[int]]:
+    """ Generate training x and y values using the files in the given directory"""
     x_results = []
     y_results = []
 
@@ -39,7 +40,7 @@ def generate_training_xy(dir_name: str, expected_value: int) -> tuple[list[list]
 
                 # Process the file contents
                 text_feature = aux_function.get_text_features(text)
-                # text_feature.append(copyleaks_scan_text(text, filename))
+                text_feature.append(copyleaks_scan_text(text, filename))
 
                 x_results.append(text_feature)
                 y_results.append(expected_value)
@@ -50,6 +51,7 @@ def generate_training_xy(dir_name: str, expected_value: int) -> tuple[list[list]
 
 
 def get_copyleaks_results(text, filename: str):
+    """Temp function only """
     # temp function only
     for record in copyleaks_results:
         if record["Name"].lower() == filename.lower():
@@ -59,6 +61,7 @@ def get_copyleaks_results(text, filename: str):
 
 
 def perform_testing(dir_name: str, model: VotingClassifier) -> list[int]:
+    """ Performs testing on the files in the given directory"""
     X_test = []
     filenames = []
 
@@ -70,7 +73,7 @@ def perform_testing(dir_name: str, model: VotingClassifier) -> list[int]:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
                 text = file.read()
                 text_feature = aux_function.get_text_features(text)
-                # text_feature.append(copyleaks_scan_text(text, filename))
+                text_feature.append(copyleaks_scan_text(text, filename))
                 X_test.append(text_feature)
                 filenames.append(filename)
 
@@ -80,6 +83,9 @@ def perform_testing(dir_name: str, model: VotingClassifier) -> list[int]:
 
 
 def ensemble():
+    """
+        The main ensemble function
+    """
     # Create the individual classifiers
     lr = LogisticRegression(random_state=42, max_iter=1000)
     knn = KNeighborsClassifier()
@@ -149,6 +155,9 @@ def calculate_ai_only_stats(ai_test_results):
 
 
 def read_file_to_text(file_path):
+    """
+        Read file from the file_path and convert it to plain 'utf-8' text
+    """
     # Check if the file exists
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"The file at {file_path} does not exist.")
@@ -167,6 +176,12 @@ def read_file_to_text(file_path):
 
 
 def calc_stats(y_true, y_pred):
+    """
+     Calculate mae and mse based on the y_true and y_pred values
+    :param y_true:
+    :param y_pred:
+    :return:
+    """
     import sklearn.metrics as metrics
 
     # Assuming y_test and y_pred are already defined
@@ -175,7 +190,6 @@ def calc_stats(y_true, y_pred):
     r2 = metrics.r2_score(y_true, y_pred)
 
     # Print the metrics in a nicely formatted manner
-    print("\n---- Stats ----")
     print(f"Mean Absolute Error (MAE): {mae:.2f}")
     print(f"Mean Squared Error (MSE) : {mse:.2f}")
     # print(f"R-squared (R²)           : {r2:.2f}")
@@ -184,7 +198,10 @@ def calc_stats(y_true, y_pred):
 
 
 def calc_stats_binary(y_true, y_pred_prob, threshold):
-    """Threshold value to be considered to true"""
+    """Calculate the function performance in binary terms.
+        All y_pred_prob values will be rounded to 0 or 1 based on the
+        "threshold" value
+    """
     y_prob = [1 if prob >= threshold else 0 for prob in y_pred_prob]
 
     accuracy = aux_function.accuracy_score(y_true, y_prob)
